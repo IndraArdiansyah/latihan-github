@@ -1,3 +1,4 @@
 latihan 1 :
 - lebih mengenal tentang github
 - belajar fitur github
+- menyambungkan dengan git
