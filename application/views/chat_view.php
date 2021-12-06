@@ -65,6 +65,7 @@
         <div class="panel-body">
 
         </div>
+        <input type="hidden" name="hidden_receiver_id_array" id="hidden_receiver_id_array" />
       </div>
     </div>
     <div class="col-md-6" style="padding-left:0; padding-right: 0;">
@@ -76,36 +77,44 @@
                 <?php echo $this->session->userdata('username'); ?></span></h2>
           </div>
           <div id="chat_body" style="height:406px; overflow-y: scroll;"></div>
+          <div id="chat_footer" style="">
+            <hr />
+            <div class="form-group">
+
+            </div>
+            <div class="form-group" align="right">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3" style="padding-left:0;">
+      <div class="panel panel-default" style="height: 300px; overflow-y: scroll;">
+        <div class="panel-heading">Search User</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-8">
+              <input type="text" name="search_user" id="search_user" class="form-control input-sm"
+                placeholder="Search User" />
+            </div>
+            <div class="col-md-4">
+              <button type="button" name="search_button" id="search_button"
+                class="btn btn-primary btn-sm">Search</button>
+            </div>
+          </div>
+
+          <div id="search_user_area"></div>
+
+        </div>
+      </div>
+      <div class="panel panel-default" style="height: 380px; overflow-y: scroll;">
+        <div class="panel-heading">Nofication</div>
+        <div class="panel-body">
 
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-3" style="padding-left:0;">
-    <div class="panel panel-default" style="height: 300px; overflow-y: scroll;">
-      <div class="panel-heading">Search User</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-8">
-            <input type="text" name="search_user" id="search_user" class="form-control input-sm"
-              placeholder="Search User" />
-          </div>
-          <div class="col-md-4">
-            <button type="button" name="search_button" id="search_button" class="btn btn-primary btn-sm">Search</button>
-          </div>
-        </div>
-
-        <div id="search_user_area"></div>
-
-      </div>
-    </div>
-    <div class="panel panel-default" style="height: 380px; overflow-y: scroll;">
-      <div class="panel-heading">Nofication</div>
-      <div class="panel-body">
-
-      </div>
-    </div>
-  </div>
   </div>
 </body>
 
@@ -143,8 +152,8 @@ $(document).ready(function() {
             for (var count = 0; count < data.length; count++) {
               output += '<div class="row">';
               output += '<div class="col-md-7"><img src="' + data[count].profile_picture +
-                '" class="img-thumbnail img-rounded" width="35" /> ' + data[count].first_name + ' ' +
-                data[count].last_name + '</div>';
+                '" class="img-circle" width="40" /> <small>' + data[count].first_name + ' ' + data[count]
+                .last_name + '</small></div>';
               if (data[count].is_request_send == 'yes') {
                 output +=
                   '<div class="col-md-5"><button type="button" name="request_button" class="btn btn-warning btn-xs">Request Sended</button></div>';
@@ -164,6 +173,29 @@ $(document).ready(function() {
         }
       })
     }
+  });
+
+  $(document).on('click', '.request_button', function() {
+    var id = $(this).attr('id');
+    var receiver_userid = $(this).data('receiver_userid');
+    var send_userid = $(this).data('send_userid');
+    $.ajax({
+      url: "<?php echo base_url(); ?>chat/send_request",
+      method: "POST",
+      data: {
+        receiver_userid: receiver_userid,
+        send_userid: send_userid
+      },
+      beforeSend: function() {
+        $('#' + id).attr('disabled', 'disabled');
+      },
+      success: function(data) {
+        $('#' + id).attr('disabled', false);
+        $('#' + id).removeClass('btn-success');
+        $('#' + id).addClass('btn-warning');
+        $('#' + id).text('Request Sended');
+      }
+    })
   });
 });
 </script>

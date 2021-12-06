@@ -25,5 +25,32 @@ class Chat_model extends CI_Model
    }
   }
  }
+
+ function Insert_chat_request($data)
+ {
+  $this->db->insert('chat_request', $data);
+ }
+
+ function Fetch_notification_data($receiver_id)
+ {
+  $this->db->where('receiver_id', $receiver_id);
+  $this->db->where('chat_request_status', 'Pending');
+  return $this->db->get('chat_request');
+ }
+
+ function Get_user_data($user_id)
+ {
+  $this->db->where('user_id', $user_id);
+  $data = $this->db->get('chat_user');
+  $output = array();
+  foreach($data->result() as $row)
+  {
+   $output['first_name'] = $row->first_name;
+   $output['last_name'] = $row->last_name;
+   $output['email_address'] = $row->email_address;
+   $output['profile_picture'] = $row->profile_picture;
+  }
+  return $output;
+ }
 }
 ?>

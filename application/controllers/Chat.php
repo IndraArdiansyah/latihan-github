@@ -70,6 +70,31 @@ class Chat extends CI_Controller {
    $this->chat_model->Insert_chat_request($data);
   }
  }
-}
 
+ function load_notification()
+ {
+  sleep(2);
+  if($this->input->post('action'))
+  {
+   $data = $this->chat_model->Fetch_notification_data($this->session->userdata('user_id'));
+   $output = array();
+   if($data->num_rows() > 0)
+   {
+    foreach($data->result() as $row)
+    {
+     $userdata = $this->chat_model->Get_user_data($row->sender_id);
+
+     $output[] = array(
+      'user_id'  => $row->sender_id,
+      'first_name' => $userdata['first_name'],
+      'last_name'  => $userdata['last_name'],
+      'profile_picture' => $userdata['profile_picture'],
+      'chat_request_id' => $row->chat_request_id
+     );
+    }
+   }
+   echo json_encode($output);
+  }
+ }
+}
 ?>
