@@ -1,0 +1,328 @@
+.navnav h1 {
+    font-family: fantasy;
+    font-size: 60px;
+    color: rgb(119, 64, 0);
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 13px 0;
+}
+
+.navnav h1 i {
+    color: rgb(0, 0, 0);
+}
+
+.form p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: large;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 3px;
+    text-align: left;
+    margin-left: 40px;
+    /* font-weight: bold; */
+}
+
+.form {
+    width: 350px;
+    height: 650px;
+    margin: 60px auto 0;
+    background: rgba(148, 80, 2, 0.623);
+    text-align: center;
+    padding: 35px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    background-image: url(mockup/WhatsApp\ Image\ 2021-10-03\ at\ 17.39.54.jpeg);
+}
+
+.form h2 {
+    margin-bottom: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn {
+    display: block;
+    height: 30px;
+    line-height: 15px;
+    text-align: center;
+    background: #bd9d80;
+    /* border-radius: 25px; */
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 5px;
+}
+
+.input {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px 0 10px 0;
+    border: 2px solid gray;
+    background: transparent;
+    color: #fff;
+}
+
+.box p {
+    text-align: left;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.pass {
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(252, 6, 6);
+    font-family: monospace;
+}
+
+.button {
+    margin-right: -40px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.kembali {
+    color: black;
+}
+
+.login-box {
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navnav {
+    width: 100%;
+    overflow: hidden;
+    font-size: 40px;
+    padding: 8px 0;
+    margin: -8px 0;
+    /* border-bottom: 1px solid #4caf50; */
+}
+
+.navlink {
+    width: 100%;
+    overflow: hidden;
+    font-size: 50px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-style: initial;
+    border-radius: 100px;
+    color: rgb(77, 41, 1);
+}
+
+body {
+    padding-top: 0;
+    font-size: 12px;
+    color: #777;
+    background: rgba(43, 37, 32, 0.719);
+    font-family: "Open Sans", sans-serif;
+    margin-top: 20px;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.friend-list {
+    list-style: none;
+    margin-left: -40px;
+    margin-top: 40px;
+}
+
+.friend-list li {
+    border-bottom: 1px solid #eee;
+}
+
+.friend-list li a img {
+    float: left;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.friend-list li a {
+    position: relative;
+    display: block;
+    padding: 10px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+.friend-list li.active a {
+    background-color: #f1f5fc;
+}
+
+.friend-name {
+    margin-left: -40px;
+}
+
+.friend-list li a .friend-name,
+.friend-list li a .friend-name:hover {
+    color: #777;
+}
+
+.friend-list li a .last-message {
+    width: 65%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.friend-list li a .time {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+}
+
+small,
+.small {
+    font-size: 85%;
+}
+
+.friend-list li a .chat-alert {
+    position: absolute;
+    right: 8px;
+    top: 27px;
+    font-size: 10px;
+    padding: 3px 5px;
+}
+
+.chat-message {
+    padding: 60px 20px 115px;
+}
+
+.chat {
+    list-style: none;
+    margin: 0;
+}
+
+.chat-message {
+    background: #f9f9f9;
+}
+
+.chat li img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50em;
+    -moz-border-radius: 50em;
+    -webkit-border-radius: 50em;
+    margin-top: -8px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.chat-body {
+    padding-bottom: 20px;
+}
+
+.chat li.left .chat-body {
+    margin-left: 70px;
+    background-color: #fff;
+}
+
+.chat li .chat-body {
+    position: relative;
+    font-size: 11px;
+    padding: 10px;
+    border: 1px solid #f1f5fc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.chat li .chat-body .header {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f1f5fc;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+}
+
+.chat li.left .chat-body:before {
+    position: absolute;
+    top: 10px;
+    left: -8px;
+    display: inline-block;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-top: 1px solid #f1f5fc;
+    border-left: 1px solid #f1f5fc;
+    content: "";
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
+.chat li.right .chat-body:before {
+    position: absolute;
+    top: 10px;
+    right: -8px;
+    display: inline-block;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-top: 1px solid #f1f5fc;
+    border-right: 1px solid #f1f5fc;
+    content: "";
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.chat li {
+    margin: 15px 0;
+}
+
+.chat li.right .chat-body {
+    margin-right: 70px;
+    background-color: #fff;
+}
+
+.chat-box {
+    /*
+  position: fixed;
+  bottom: 0;
+  left: 444px;
+  right: 0;
+*/
+    padding: 15px;
+    border-top: 1px solid #eee;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.primary-font {
+    color: #3c8dbc;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+    outline: 0;
+}
